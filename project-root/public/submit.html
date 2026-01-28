@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Submit Request — SkillSync</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="site">
+  <header class="topbar">
+    <div class="left">
+      <img src="logo.png" alt="Logo" class="logo">
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">HOME</a>
+      <a href="submit.html" class="active">SUBMIT REQUEST</a>
+      <a href="give.html">GIVE HELP</a>
+      <a href="message.html">MESSAGE</a>
+      <a href="profile.html">PROFILE</a>
+    </nav>
+
+    <div class="right">
+      <div id="userDisplay" class="user-display">Not signed in</div>
+      <button id="authBtn" class="btn-primary small">Sign In</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="page-title">SUBMIT REQUESTS HERE</h2>
+
+    <form id="requestForm" class="form-panel">
+      <label>Category:
+        <select id="category" required>
+          <option value="">Choose the relevant category</option>
+          <option>Academics</option>
+          <option>Music</option>
+          <option>Sports</option>
+          <option>Personal</option>
+        </select>
+      </label>
+
+      <label>Title:
+        <input id="title" type="text" placeholder="Describe your request concisely!" required>
+      </label>
+
+      <label>Description:
+        <textarea id="description" rows="6" placeholder="Give other users a short description of what your help request entails..." required></textarea>
+      </label>
+
+      <p class="hint">You must be signed in to submit. Your display name or email will be used as your public name.</p>
+
+      <button id="submitBtn" class="btn-primary" type="submit">SUBMIT</button>
+      <p id="status" class="status"></p>
+    </form>
+  </main>
+
+  <script type="module" src="js/firebase-init.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/submit.js"></script>
+</body>
+</html>

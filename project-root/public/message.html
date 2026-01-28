@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Message Others — SkillSync</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="site">
+  <header class="topbar">
+    <div class="left">
+      <img src="logo.png" alt="Logo" class="logo">
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">HOME</a>
+      <a href="submit.html">SUBMIT REQUEST</a>
+      <a href="give.html">GIVE HELP</a>
+      <a href="message.html" class="active">MESSAGE</a>
+      <a href="profile.html">PROFILE</a>
+    </nav>
+
+    <div class="right">
+      <div id="userDisplay" class="user-display">Not signed in</div>
+      <button id="authBtn" class="btn-primary small">Sign In</button>
+    </div>
+  </header>
+
+  <main class="container two-col">
+    <section class="panel form-panel">
+      <h3>New Message</h3>
+      <label>To (recipient email):
+        <input id="to" placeholder="friend@example.com">
+      </label>
+      <label>Title:
+        <input id="msgTitle" placeholder="Title">
+      </label>
+      <label>Message:
+        <textarea id="msgBody" rows="5" placeholder="Write your message here!"></textarea>
+      </label>
+      <p class="hint">You must be signed in to send messages. Messages are delivered to the recipient's email address in the app.</p>
+      <button id="sendBtn" class="btn-primary">SEND</button>
+      <p id="msgStatus" class="status"></p>
+    </section>
+
+    <aside class="panel messages-panel">
+      <h3>Inbox</h3>
+      <div id="inbox" class="past-messages"></div>
+      <h3 style="margin-top:12px">Sent</h3>
+      <div id="sent" class="past-messages"></div>
+    </aside>
+  </main>
+
+  <script type="module" src="js/firebase-init.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/messages.js"></script>
+</body>
+</html>

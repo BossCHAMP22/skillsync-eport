@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profile — SkillSync</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="site">
+  <header class="topbar">
+    <div class="left">
+      <img src="logo.png" alt="Logo" class="logo">
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">HOME</a>
+      <a href="submit.html">SUBMIT REQUEST</a>
+      <a href="give.html">GIVE HELP</a>
+      <a href="message.html">MESSAGE</a>
+      <a href="profile.html" class="active">PROFILE</a>
+    </nav>
+
+    <div class="right">
+      <div id="userDisplay" class="user-display">Not signed in</div>
+      <button id="authBtn" class="btn-primary small">Sign In</button>
+    </div>
+  </header>
+
+  <main class="container profile-layout">
+    <section class="panel profile-panel">
+      <h2>Your Profile</h2>
+      <div class="profile-top">
+        <img id="profilePhoto" src="logo.png" alt="Avatar" class="avatar-large">
+        <div class="profile-info">
+          <div><strong>Email:</strong> <span id="profileEmail">—</span></div>
+          <div><strong>Display name:</strong> <input id="displayName" type="text" placeholder="Your name"></div>
+          <div style="margin-top:8px">
+            <label for="photoUpload" class="btn-primary small" style="display:inline-block;cursor:pointer">Choose photo</label>
+            <input id="photoUpload" type="file" accept="image/*" style="display:none">
+            <button id="saveProfile" class="btn-primary">Save profile</button>
+            <p id="profileStatus" class="status"></p>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:18px">Achievements</h3>
+      <div id="achievements" class="achievements"></div>
+
+      <h3 style="margin-top:18px">Stats</h3>
+      <div class="stats">
+        <div>Requests submitted: <span id="submittedCount">0</span></div>
+        <div>Requests solved: <span id="solvedCount">0</span></div>
+      </div>
+    </section>
+
+    <br>
+
+    <aside class="panel">
+      <h3>Quick links</h3>
+      <ul>
+        <li><a href="give.html">View unclaimed requests</a></li>
+        <li><a href="submit.html">Submit a new request</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <script type="module" src="js/firebase-init.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/profile.js"></script>
+</body>
+</html>
