@@ -1,0 +1,142 @@
+/* Main styles (colors chosen to visually match your mockups) */
+:root{
+  --brand-green: #1f8a2f;    /* main green */
+  --accent-gold: #e5b632;    /* gold/yellow for titles */
+  --nav-blue: #1b2aff;       /* small blue badge on left */
+  --panel-bg: #ffffff;
+  --muted-olive: #c2b595;    /* for form backgrounds */
+  --text-dark: #072018;
+  --mono: 'Montserrat', sans-serif;
+  --display: 'Playfair Display', serif;
+}
+
+*{box-sizing:border-box}
+body.site{
+  margin:0;
+  font-family:var(--mono);
+  background:var(--brand-green);
+  color:#fff;
+  min-height:100vh;
+}
+
+/* Topbar */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 18px;
+  background:var(--brand-green);
+  border-bottom:4px solid rgba(0,0,0,0.08);
+}
+.logo-box{
+  background:var(--nav-blue);
+  padding:6px 10px;
+  border-radius:3px;
+}
+.logo{height:34px; display:block}
+.nav{
+  display:flex;
+  gap:22px;
+  align-items:center;
+  font-weight:600;
+  letter-spacing:0.06em;
+}
+.nav a{color:#dff3e0; text-decoration:none}
+.nav a.active{color:var(--accent-gold)}
+.avatar{font-size:20px; opacity:0.9}
+
+/* Layout */
+.container{
+  padding:24px;
+  max-width:1100px;
+  margin:18px auto;
+}
+
+/* Hero */
+.hero{padding:20px 0}
+.brand{
+  font-family:var(--display);
+  font-weight:900;
+  font-size:96px;
+  line-height:0.82;
+  margin:0;
+  color:#fff;
+}
+.brand-top{display:block}
+.brand-btm{
+  display:block;
+  color:var(--accent-gold);
+}
+.subtitle{font-size:14px; opacity:0.95; margin-top:6px}
+
+/* Features */
+.features{display:flex; gap:18px; margin-top:22px}
+.card{background:transparent; text-align:center}
+.card img{width:260px; height:160px; object-fit:cover; border-radius:6px; display:block; margin:0 auto}
+.caption{font-size:13px; color:#e8f7e9; margin-top:8px}
+
+/* Panels & forms */
+.form-panel{
+  background:var(--panel-bg);
+  color:var(--text-dark);
+  padding:22px;
+  border-radius:20px;
+  max-width:760px;
+  margin:16px auto;
+}
+.form-panel label{display:block; margin-bottom:12px; font-size:14px}
+input[type=text], textarea, select{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #b6b6b6;
+  background:var(--muted-olive);
+  font-family:var(--mono);
+}
+.btn-primary{
+  background:var(--nav-blue);
+  color:white;
+  border:none;
+  padding:10px 18px;
+  border-radius:12px;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:8px;
+}
+.status{margin-top:8px; font-size:13px; color:#333}
+
+/* Requests grid */
+.requests-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:14px;
+}
+.request-card{
+  background:var(--panel-bg);
+  color:var(--text-dark);
+  padding:12px;
+  border-radius:12px;
+  text-align:center;
+  min-height:110px;
+}
+.request-card h4{margin:0 0 6px 0}
+.request-meta{font-size:12px; color:#666; margin-top:6px}
+
+/* two-column layout for messages */
+.two-col{display:grid; grid-template-columns: 1fr 320px; gap:18px}
+.panel{background:var(--panel-bg); color:var(--text-dark); padding:16px; border-radius:18px}
+.messages-panel{max-height:480px; overflow:auto}
+.past-messages .msg{background:#f2f2f2; padding:10px; border-radius:8px; margin-bottom:8px}
+
+/* Responsive */
+@media (max-width:900px){
+  .brand{font-size:60px}
+  .features{flex-direction:column; align-items:center}
+  .requests-grid{grid-template-columns:repeat(2,1fr)}
+  .two-col{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .brand{font-size:44px}
+  .requests-grid{grid-template-columns:1fr}
+}
