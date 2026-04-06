@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Profile</title>
+</head>
+<body data-protected="true">
+
+<header>
+  <a href="index.html">
+    <img class="logo" src="assets/logo.png" alt="Logo">
+  </a>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="submit.html">SUBMIT REQUEST</a>
+    <a href="help.html">GIVE HELP</a>
+    <a href="messages.html">MESSAGE</a>
+  </nav>
+  <a id="loginBtn" class="login-btn" href="login.html">LOGIN</a>
+</header>
+
+<div class="form-box">
+  <h2>My Profile</h2>
+
+  <img id="profileImage" width="120" height="120" style="border-radius:50%;object-fit:cover;">
+
+  <label>Upload Profile Picture</label>
+  <input type="file" id="profileUpload" accept="image/*">
+
+
+  <label>Full Name</label>
+  <input id="profileName">
+
+  <label>Email</label>
+  <input id="profileEmail" disabled>
+
+  <label>Year Group</label>
+  <input id="profileYear">
+
+  <button id="saveProfile">Save Changes</button>
+
+  <h3>Achievements</h3>
+  <ul id="achievementsList"></ul>
+
+  <button id="logoutBtn">LOG OUT</button>
+</div>
+
+<script type="module" src="js/profile.js"></script>
+<script type="module" src="js/guard.js"></script>
+</body>
+</html>

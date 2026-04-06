@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-protected="true">
+
+<header>
+  <a href="index.html">
+    <img class="logo" src="assets/logo.png" alt="Logo">
+  </a>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="submit.html">SUBMIT REQUEST</a>
+    <a href="help.html">GIVE HELP</a>
+    <a class="active">MESSAGE</a>
+  </nav>
+  <a id="loginBtn" class="login-btn" href="login.html">LOGIN</a>
+</header>
+
+<div class="main message-layout">
+
+  <div class="message-box new-message-box">
+    <h3>New Message</h3>
+
+    <form id="messageForm">
+      <label for="receiver">Recipient Email</label>
+      <input id="receiver" type="email" placeholder="Recipient Email" required>
+      <label for="title">Title</label>
+      <input id="title" type="text" placeholder="Title" required>
+      <label for="messageText">Message</label>
+      <textarea id="messageText" rows="4" placeholder="Write your message" required></textarea>
+      <button type="submit">SEND</button>
+    </form>
+
+    <p id="status"></p>
+  </div>
+
+  <div class="message-box">
+    <h3>Past Messages</h3>
+    <div id="messageList" class="mailbox">
+      <div id="threadList" class="thread-list"></div>
+      <div id="threadView" class="thread-view">
+        <p>Select a conversation to read and reply.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script type="module" src="js/messages.js"></script>
+<script type="module" src="js/guard.js"></script>
+</body>
+</html>
